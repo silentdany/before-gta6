@@ -18,6 +18,7 @@ const regular = await readFile(join(process.cwd(), "assets/Archivo-Regular.woff"
 // Real captures of the most-liked posts (official X embed, light theme), made once by
 // scripts/capture-og-tweets.mjs and committed in assets/og/. Read from disk: no fetch at build or request time.
 type Shot = { id: string; handle: string; w: number; h: number };
+// Card set: 2026-10-16d (hype-pinned, see scripts/capture-og-tweets.mjs). Bump when assets/og changes: the ?hash only tracks this source.
 const ogDir = join(process.cwd(), "assets/og");
 const shots: (Shot & { src: string })[] = await Promise.all(
   (JSON.parse(await readFile(join(ogDir, "cards.json"), "utf8")) as Shot[]).map(async (s) => ({

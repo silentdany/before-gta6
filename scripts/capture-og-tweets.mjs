@@ -4,7 +4,7 @@
 //
 // Source: the official X embed captures made by scripts/screenshot-posts.mjs
 // (light theme, dnt, platform.twitter.com/widgets.js, headless Chromium via playwright-core) in public/shots/.
-// This takes the 6 most-liked reviewed posts, crops each capture to the top of the card
+// This takes the 6 pinned posts below, crops each capture to the top of the card
 // (header + first lines of text), downsizes to 440px wide and writes small JPEG files (Satori decodes PNG/JPEG, not WebP).
 //
 // Usage: npm run screenshots -- <ids>   (only if a capture is missing)
@@ -18,10 +18,22 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(root, "assets/og");
 mkdirSync(OUT, { recursive: true });
 const { posts } = JSON.parse(readFileSync(join(root, "data/posts.json"), "utf8"));
-// Embeds whose video shows "The media could not be played" in headless Chromium: skipped or cropped above the player.
-const SKIP = new Set(["2103400199901123032"]);
+// Pinned, ordered selection: picked for repost/hype potential, not likes. posts.json carries no follower
+// counts, so this is a judgment call on public accounts with large active audiences who could plausibly
+// quote or repost the site. Private people's personal posts (e.g. graduation photos) are left out on purpose.
+// The OG route features @rauchg on top; the order here is the stacking order of the others.
+const PINNED = [
+  ["2110957024934858815", "rauchg"], // Vercel CEO, huge dev/tech audience; the post is about Vercel. Featured.
+  ["1885984055382192133", "DarkViperAU"], // Verified GTA YouTuber/streamer, core GTA audience.
+  ["2033666003717050798", "TukiFromKL"], // Verified viral tech/AI news account, most-liked post on the wall.
+  ["2105306860194775059", "mdaman010"], // Verified Minecraft x GTA modding creator.
+  ["1942198092742189280", "not_mynes"], // Gaming commentator on the #SaveHytale wave.
+  ["2107124303506317734", "MintRefresh_MC"], // Minecraft content creator, gaming crowd.
+];
+// Crop heights (px at 440 wide) that stop above embedded videos, which render as "The media could not be played".
 const CROP = { "2033666003717050798": 268 };
-const top = posts.filter((p) => !p.needsReview && !SKIP.has(p.id)).sort((a, b) => b.likeCount - a.likeCount).slice(0, 6);
+const byId = new Map(posts.map((p) => [p.id, p]));
+const top = PINNED.map(([id]) => byId.get(id)).filter(Boolean);
 
 const W = 440, MAX_H = 380;
 const list = [];
