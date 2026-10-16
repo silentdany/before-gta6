@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, Heart, ImageIcon, X } from "lucide-react";
+import { ArrowUpRight, Heart, X } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { XEmbed } from "@/components/embed";
+import { Shot, Wordmark } from "@/components/art";
 import { CATEGORIES, type Category, type Post } from "@/lib/site";
 import { CAT } from "@/lib/categories";
 
@@ -33,8 +34,9 @@ export function Wall({ posts }: { posts: Post[] }) {
   return (
     <section id="wall" aria-labelledby="wall-title" className="mx-auto max-w-[1320px] scroll-mt-2 px-2.5 pt-12 pb-16 sm:px-3">
       <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3 px-1.5 pb-6">
-        <h2 id="wall-title" className="sticker -rotate-2 text-[clamp(3rem,7vw,5rem)]">
-          the wall
+        <h2 id="wall-title" className="-rotate-2">
+          <span className="sr-only">The wall</span>
+          <Wordmark name="theWall" className="w-[min(70vw,380px)]" />
         </h2>
         <p className="max-w-[44ch] text-paper/65">
           {posts.length} posts from X, picked by hand. Read any of them right here, or jump to the original.
@@ -115,43 +117,64 @@ function Tag({ category }: { category: Category }) {
   );
 }
 
+// Deterministic small tilt per post, so captures sit a little askew like prints on a board.
+const tiltOf = (id: string) => ((Number(id.slice(-3)) % 7) - 3) * 0.8;
+
 function Card({ post: p, top, onRead }: { post: Post; top: boolean; onRead: () => void }) {
   const meta = CAT[p.category];
+  const hasShot = Boolean(p.shot);
   return (
     <li
       style={{ "--cat": meta.color } as Css}
-      className={`card-panel relative flex flex-col overflow-hidden rounded-[3px] p-5 text-ink ${top ? "top-panel sm:col-span-2 sm:p-7" : ""}`}
+      className={`card-panel relative isolate flex min-h-[400px] flex-col overflow-hidden rounded-[3px] p-5 text-ink ${top ? "sm:col-span-2 sm:min-h-[460px] sm:p-7" : ""}`}
     >
-      {/* the category glyph, oversized and faint, like a stamp printed on the panel */}
-      <meta.icon aria-hidden="true" className="pointer-events-none absolute -right-6 -bottom-6 size-36 text-ink opacity-[0.06]" strokeWidth={1.5} />
+      {hasShot ? (
+        <>
+          <Shot
+            post={p}
+            tilt={top ? 3 : tiltOf(p.id)}
+            className={
+              top
+                ? "top-[60px] left-4 w-[calc(100%-2rem)] sm:top-[9%] sm:right-[4%] sm:left-auto sm:w-[min(50%,560px)]"
+                : "top-[58px] left-4 w-[calc(100%-2rem)]"
+            }
+          />
+          <div className="tint" aria-hidden="true" />
+          <div className={top ? "fade top-fade" : "fade"} aria-hidden="true" />
+        </>
+      ) : (
+        <meta.icon aria-hidden="true" className="pointer-events-none absolute -right-6 -bottom-6 size-36 text-ink opacity-[0.06]" strokeWidth={1.5} />
+      )}
 
       <div className="relative flex items-center justify-between gap-3 text-sm">
         <Tag category={p.category} />
-        <time dateTime={p.date} className="font-medium text-ink/65 tabular-nums">
-          {short.format(new Date(p.date))}
-        </time>
+        {top && <span className="caption px-2 py-0.5 text-xs">The most liked post on the wall</span>}
       </div>
 
-      {top && <p className="relative mt-5 text-sm font-bold">The most liked post on the wall</p>}
-      <h3
-        className={`relative font-black text-balance [font-stretch:70%] ${top ? "mt-1 text-[clamp(2.2rem,4.6vw,3.8rem)] leading-[0.95] tracking-[-0.01em] [word-spacing:0.06em]" : "mt-4 text-[1.85rem] leading-[0.98] tracking-[-0.005em] [word-spacing:0.06em]"}`}
-      >
-        {p.thing}
-      </h3>
-      <p className={`relative mt-3 text-[0.95rem] leading-relaxed text-ink/75 ${top ? "line-clamp-4 max-w-[60ch]" : "line-clamp-3"}`}>“{p.text}”</p>
+      <div className={`relative mt-auto ${top ? "sm:max-w-[46%]" : ""}`}>
+        <h3
+          className={`font-black text-balance [font-stretch:70%] [word-spacing:0.06em] ${top ? "text-[clamp(2.2rem,4.2vw,3.6rem)] leading-[0.95] tracking-[-0.01em]" : "text-[1.85rem] leading-[0.98] tracking-[-0.005em]"}`}
+        >
+          {p.thing}
+        </h3>
+        <p className={hasShot ? "sr-only" : "mt-3 line-clamp-3 text-[0.95rem] leading-relaxed text-ink/75"}>“{p.text}”</p>
+      </div>
 
-      <div className="relative mt-auto pt-5">
+      <div className="relative pt-4">
         <div className="flex items-center justify-between gap-3 border-t-2 border-ink/15 pt-4">
           <p className="min-w-0 text-sm leading-tight">
-            <span className="block truncate font-bold">{p.author.name}</span>
-            <span className="flex items-center gap-2 text-ink/60">
-              <span className="truncate">@{p.author.handle}</span>
+            <span className="block truncate font-bold">
+              {p.author.name} <span className="font-medium text-ink/60">@{p.author.handle}</span>
+            </span>
+            <span className="mt-0.5 flex items-center gap-2 text-ink/65">
               <span className="inline-flex shrink-0 items-center gap-1 font-semibold text-ink tabular-nums">
                 <Heart className="size-3.5 fill-pink text-pink" aria-hidden="true" />
                 {top ? full.format(p.likeCount) : compact.format(p.likeCount)}
                 <span className="sr-only"> likes</span>
               </span>
-              {p.media && <ImageIcon className="size-3.5 shrink-0" aria-label="Has media" />}
+              <time dateTime={p.date} className="tabular-nums">
+                {short.format(new Date(p.date))}
+              </time>
             </span>
           </p>
           <div className="flex shrink-0 items-center gap-1.5">

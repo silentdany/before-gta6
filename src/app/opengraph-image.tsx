@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { posts } from "@/lib/site";
+import { WORDMARKS } from "@/lib/wordmarks";
 
 export const alt = "Before GTA 6 — everything we got before GTA 6";
 export const size = { width: 1200, height: 630 };
@@ -20,6 +21,7 @@ const sticker = (fontSize: number) => ({
   color: "white",
   textShadow: `0 0 2px ${INK}, 3px 3px 0 ${INK}, -3px 3px 0 ${INK}, 3px -3px 0 ${INK}, -3px -3px 0 ${INK}, 0 4px 0 ${INK}, 4px 0 0 ${INK}, -4px 0 0 ${INK}, 0 -4px 0 ${INK}, 7px 9px 0 ${INK}`,
 });
+const T = WORDMARKS.title;
 const caption = {
   display: "flex",
   background: "#FFF7EA",
@@ -49,10 +51,12 @@ export default function Image() {
             background: "linear-gradient(180deg, #A996EE 0%, #E59BD3 45%, #FFB08C 78%, #FFD889 100%)",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", transform: "rotate(-3deg)" }}>
-            <span style={sticker(78)}>we got it</span>
-            <span style={{ ...sticker(150), marginTop: 10 }}>before</span>
-            <span style={{ ...sticker(150), marginTop: 6 }}>gta 6</span>
+          <div style={{ display: "flex", transform: "rotate(-4deg)" }}>
+            <svg width={600} height={(600 * (T.h + 25)) / (T.w + 24)} viewBox={`-9 -9 ${T.w + 24} ${T.h + 25}`}>
+              <path d={T.d} transform="translate(6 7)" fill={INK} stroke={INK} strokeWidth="12" strokeLinejoin="round" />
+              <path d={T.d} fill={INK} stroke={INK} strokeWidth="11" strokeLinejoin="round" />
+              <path d={T.d} fill="#FFFFFF" />
+            </svg>
           </div>
           <div style={{ ...caption, alignSelf: "flex-start" }}>The internet’s longest-running joke, collected.</div>
         </div>

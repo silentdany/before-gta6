@@ -148,6 +148,51 @@ a.panel:hover { filter: brightness(1.05) saturate(1.06); }
 .peach { background: linear-gradient(165deg, #FFE7C7 0%, #FFC9A0 100%); }
 .lilac { background: linear-gradient(165deg, #ECE2FC 0%, #C9B6F3 100%); }
 
+/* Post captures used as panel art: a print with an ink keyline, tinted by the panel color (--cat). */
+.shot {
+  border-radius: 14px;
+  box-shadow: 0 0 0 2px #2A1838, 7px 9px 0 rgb(42 24 56 / 0.3);
+  filter: grayscale(0.3) contrast(1.04);
+}
+.tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--cat);
+  mix-blend-mode: multiply;
+  opacity: 0.62;
+}
+/* solid panel color where the words sit, so titles stay readable over the capture */
+.fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--cat) 35%, transparent) 0%,
+    color-mix(in oklab, var(--cat) 12%, transparent) 20%,
+    color-mix(in oklab, var(--cat) 80%, transparent) 46%,
+    var(--cat) 62%);
+}
+@media (min-width: 640px) {
+  .fade.top-fade {
+    background: linear-gradient(90deg, var(--cat) 0%, var(--cat) 40%, color-mix(in oklab, var(--cat) 35%, transparent) 62%, transparent 85%);
+  }
+}
+.fade-left {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, var(--cat) 0%, color-mix(in oklab, var(--cat) 70%, transparent) 38%, transparent 70%);
+}
+.title-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(75% 70% at 22% 30%, color-mix(in oklab, #E59BD3 88%, transparent) 0%, transparent 75%),
+    linear-gradient(0deg, color-mix(in oklab, #FFC9A0 80%, transparent) 0%, transparent 35%);
+}
+
 /* Comic halftone, fading out from one corner */
 .halftone::before {
   content: "";

@@ -21,4 +21,18 @@ mention "before/avant GTA 6/VI", are not replies/reposts/sensitive/spam and have
 (or are pinned in `curation.json`). Auto-added posts get `needsReview: true` and stay hidden on the
 site until pinned in `curation.json` and re-run. No X credentials live in this repo.
 
+## Post captures
+Each post is shown as a capture of its X embed (`public/shots/<id>.jpg`, sizes in `data/shots.json`).
+After adding posts, capture the new ones:
+
+```bash
+npx playwright-core install chromium   # once
+npm run screenshots                    # new posts only; --all to redo everything, or pass ids
+```
+
+## Title artwork
+"we got it before gta 6" and "the wall" are Pricedown (Typodermic) outlined to SVG paths in
+`src/lib/wordmarks.ts`. The desktop license allows outlined artwork but not serving the font file,
+so the font itself is not in the repo.
+
 Not affiliated with Rockstar Games or Take-Two Interactive.

@@ -1,18 +1,30 @@
 import { ArrowDown, ArrowUpRight, Heart } from "lucide-react";
 import { DaysSince, DaysUntil } from "@/components/countdown";
 import { Wall } from "@/components/wall";
+import { Shot, Wordmark } from "@/components/art";
 import { ANNOUNCED, RELEASE, dayCounts, posts, updatedAt, type Post } from "@/lib/site";
 
 const long = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const compact = new Intl.NumberFormat("en-US", { notation: "compact" });
 
-// A post pulled out of the wall into the collage: the "thing" set big, credit underneath.
-function PostPanel({ post, area, tone }: { post: Post; area: string; tone: string }) {
+type Css = React.CSSProperties & Record<`--${string}`, string>;
+
+// A post pulled out of the wall into the collage: its capture tinted in the panel color, the "thing" set over it.
+function PostPanel({ post, area, tone, tilt }: { post: Post; area: string; tone: string; tilt: number }) {
   return (
-    <a href={post.url} target="_blank" rel="noopener noreferrer" className={`panel halftone group ${tone}`} style={{ gridArea: area }}>
-      <div className="relative flex h-full flex-col justify-between gap-3 p-4 sm:p-5">
-        <span className="text-xs font-bold text-ink/70">We got…</span>
-        <span className="text-[clamp(1.6rem,2.6vw,2.4rem)] leading-[0.95] font-black text-balance [font-stretch:70%] [word-spacing:0.06em]">
+    <a
+      href={post.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="panel group"
+      style={{ gridArea: area, background: tone, "--cat": tone } as Css}
+    >
+      <Shot post={post} tilt={tilt} eager className="top-[14%] left-1/2 w-[min(118%,520px)] -translate-x-[46%]" />
+      <div className="tint" aria-hidden="true" />
+      <div className="fade" aria-hidden="true" />
+      <div className="relative flex h-full flex-col gap-2 p-4 sm:p-5">
+        <span className="caption self-start px-2 py-0.5 text-xs">We got…</span>
+        <span className="mt-auto text-[clamp(1.5rem,2.3vw,2.2rem)] leading-[0.95] font-black text-balance [font-stretch:70%] [word-spacing:0.06em]">
           {post.thing}
         </span>
         <span className="flex min-w-0 items-center gap-1.5 text-xs font-semibold text-ink/75 group-hover:underline">
@@ -28,16 +40,39 @@ function PostPanel({ post, area, tone }: { post: Post; area: string; tone: strin
 
 export default function Home() {
   const d = dayCounts(Date.parse(updatedAt));
-  const [top, second, third] = [...posts].sort((a, b) => b.likeCount - a.likeCount);
+  const ranked = [...posts].sort((a, b) => b.likeCount - a.likeCount);
+  const [top, second, third] = ranked;
+  const withShots = ranked.slice(3).filter((p) => p.shot);
+  const pile = [
+    { cls: "top-[4%] right-[-6%] w-[46%]", tilt: 6 },
+    { cls: "top-[34%] right-[14%] w-[44%]", tilt: -5 },
+    { cls: "top-[-8%] right-[30%] w-[40%]", tilt: -2 },
+    { cls: "bottom-[-12%] right-[-4%] w-[42%]", tilt: 3 },
+    { cls: "bottom-[-18%] left-[30%] w-[40%]", tilt: -7 },
+  ].map((s, i) => ({ ...s, post: withShots[i] })).filter((s) => s.post);
+  const stack = [
+    { cls: "top-[18%] right-[-14%] w-[62%]", tilt: 7 },
+    { cls: "top-[30%] right-[4%] w-[60%]", tilt: -4 },
+  ].map((s, i) => ({ ...s, post: withShots[5 + i] })).filter((s) => s.post);
+  const side = [
+    { cls: "hidden md:block top-[3%] left-[-20%] w-[150%]", tilt: -6 },
+    { cls: "hidden md:block top-[24%] left-[-6%] w-[140%]", tilt: 4 },
+  ].map((s, i) => ({ ...s, post: withShots[7 + i] })).filter((s) => s.post);
   return (
     <main>
       {/* Comic-panel collage: dark gutters, pastel panels, the title set across the middle */}
       <section aria-label="Before GTA 6" className="collage mx-auto max-w-[1320px] p-2.5 sm:p-3">
-        <div className="panel dusk halftone [grid-area:title]">
+        <div className="panel dusk [grid-area:title]" style={{ "--cat": "#E59BD3" } as Css}>
+          {/* a loose pile of posts from the wall behind the title */}
+          {pile.map(({ post, cls, tilt }) => (
+            <Shot key={post.id} post={post} tilt={tilt} eager className={cls} />
+          ))}
+          <div className="tint" aria-hidden="true" />
+          <div className="title-fade" aria-hidden="true" />
           <div className="relative flex h-full flex-col justify-between gap-6 p-5 sm:p-8">
-            <h1 className="sticker -rotate-[3deg] self-start text-[clamp(3.9rem,19vw,10rem)] md:text-[clamp(3.9rem,11vw,10rem)]">
-              <span className="block text-[0.52em]">we got it</span>
-              before gta&nbsp;6
+            <h1 className="-rotate-[4deg] self-start">
+              <span className="sr-only">We got it before GTA 6</span>
+              <Wordmark name="title" className="w-[min(88vw,560px)] drop-shadow-[0_10px_30px_rgb(42_24_56/0.25)] md:w-[min(52vw,600px)]" />
             </h1>
             <p className="caption max-w-[34ch] self-start">
               The internet’s longest-running joke, collected: {posts.length} things people got before the game came out.
@@ -59,7 +94,18 @@ export default function Home() {
           </div>
         </a>
 
-        <a href={ANNOUNCED.url} target="_blank" rel="noopener noreferrer" className="panel lagoon halftone group [grid-area:since]">
+        <a
+          href={ANNOUNCED.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="panel lagoon group [grid-area:since]"
+          style={{ "--cat": "#8AD3E3" } as Css}
+        >
+          {side.map(({ post, cls, tilt }) => (
+            <Shot key={post.id} post={post} tilt={tilt} eager className={cls} />
+          ))}
+          <div className="tint" aria-hidden="true" />
+          <div className="fade" aria-hidden="true" />
           <div className="relative flex h-full flex-col items-start justify-end gap-4 p-4">
             <span className="sticker text-[clamp(2.3rem,10vw,3.4rem)] tabular-nums md:text-[clamp(2.6rem,4.1vw,4rem)]">
               <DaysSince initial={d.since} />
@@ -74,10 +120,19 @@ export default function Home() {
         </a>
 
         {top && (
-          <a href={top.url} target="_blank" rel="noopener noreferrer" className="panel flamingo halftone group [grid-area:top]">
-            <div className="relative flex h-full flex-col justify-between gap-4 p-4 sm:p-5">
+          <a
+            href={top.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="panel flamingo group [grid-area:top]"
+            style={{ "--cat": "#F8A9CF" } as Css}
+          >
+            <Shot post={top} tilt={3} eager className="top-[13%] left-1/2 w-[min(125%,540px)] -translate-x-[48%]" />
+            <div className="tint" aria-hidden="true" />
+            <div className="fade" aria-hidden="true" />
+            <div className="relative flex h-full flex-col gap-3 p-4 sm:p-5">
               <span className="caption self-start text-sm">Most liked on the wall</span>
-              <span className="text-[clamp(1.9rem,3vw,2.9rem)] leading-[0.94] font-black text-balance [font-stretch:68%] [word-spacing:0.06em]">
+              <span className="mt-auto text-[clamp(1.7rem,2.5vw,2.5rem)] leading-[0.94] font-black text-balance [font-stretch:68%] [word-spacing:0.06em]">
                 “{top.thing}”
               </span>
               <span className="flex items-center gap-1.5 text-sm font-semibold text-ink/80 group-hover:underline">
@@ -89,10 +144,15 @@ export default function Home() {
           </a>
         )}
 
-        {second && <PostPanel post={second} area="p2" tone="peach" />}
-        {third && <PostPanel post={third} area="p3" tone="lilac" />}
+        {second && <PostPanel post={second} area="p2" tone="#FFC9A0" tilt={-3} />}
+        {third && <PostPanel post={third} area="p3" tone="#C9B6F3" tilt={2.5} />}
 
-        <a href="#wall" className="panel ripples group [grid-area:wall]">
+        <a href="#wall" className="panel ripples group [grid-area:wall]" style={{ "--cat": "#A6E6EE" } as Css}>
+          {stack.map(({ post, cls, tilt }) => (
+            <Shot key={post.id} post={post} tilt={tilt} className={cls} />
+          ))}
+          <div className="tint" aria-hidden="true" />
+          <div className="fade-left" aria-hidden="true" />
           <div className="relative flex h-full flex-col items-start justify-between gap-3 p-4">
             <span className="sticker text-[clamp(4rem,8vw,6rem)] tabular-nums">{posts.length}</span>
             <span className="caption inline-flex items-center gap-2">

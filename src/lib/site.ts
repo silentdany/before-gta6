@@ -1,4 +1,5 @@
 import data from "../../data/posts.json";
+import shots from "../../data/shots.json";
 
 export type Category = "tech" | "personal life" | "absurd" | "world/news" | "gaming" | "other";
 export const CATEGORIES: Category[] = ["tech", "gaming", "personal life", "world/news", "absurd", "other"];
@@ -13,9 +14,14 @@ export type Post = {
   date: string;
   category: Category;
   media: boolean;
+  /** Capture of the post as X renders it (scripts/screenshot-posts.mjs), used as a tinted panel background. */
+  shot?: { src: string; w: number; h: number };
 };
 
-export const posts = (data.posts as Post[]).filter((p) => !(p as { needsReview?: boolean }).needsReview);
+const shotSizes = shots as Record<string, { w: number; h: number }>;
+export const posts = (data.posts as Post[])
+  .filter((p) => !(p as { needsReview?: boolean }).needsReview)
+  .map((p) => (shotSizes[p.id] ? { ...p, shot: { src: `/shots/${p.id}.jpg`, ...shotSizes[p.id] } } : p));
 export const updatedAt = data.updatedAt as string;
 
 // Verified on Rockstar Newswire (see /workspace/projets/before-gta6.md)
