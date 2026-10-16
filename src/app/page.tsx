@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Heart } from "lucide-react";
 import { DaysSince, DaysUntil } from "@/components/countdown";
 import { Wall } from "@/components/wall";
@@ -60,6 +61,14 @@ export default function Home() {
   ].map((s, i) => ({ ...s, post: withShots[7 + i] })).filter((s) => s.post);
   return (
     <main>
+      <header className="mx-auto flex max-w-[1320px] items-center gap-2.5 px-4 pt-4 sm:px-5">
+        <Link href="/" className="inline-flex items-center gap-2.5 font-black tracking-tight text-paper [font-stretch:80%]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/b6.svg" alt="" width={32} height={32} className="size-8" />
+          <span>Before GTA 6</span>
+        </Link>
+      </header>
+
       {/* Comic-panel collage: dark gutters, pastel panels, the title set across the middle */}
       <section aria-label="Before GTA 6" className="collage mx-auto max-w-[1320px] p-2.5 sm:p-3">
         <div className="panel dusk [grid-area:title]" style={{ "--cat": "#E59BD3" } as Css}>
@@ -177,6 +186,24 @@ export default function Home() {
             release date
           </a>{" "}
           from Rockstar Newswire. Data refreshed {long.format(new Date(updatedAt))}.
+        </p>
+        <p className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-paper/75">
+          <span className="inline-flex items-center gap-2">
+            Made by
+            <a
+              href="https://x.com/MajorBaguette"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-paper hover:text-pink"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/major-pfp.png" alt="" width={24} height={24} className="size-6 rounded-full object-cover ring-1 ring-paper/20" />
+              @MajorBaguette
+            </a>
+          </span>
+          <a href="https://accura.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-paper hover:text-pink">
+            accura.dev
+          </a>
         </p>
       </footer>
     </main>
