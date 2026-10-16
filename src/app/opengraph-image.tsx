@@ -11,80 +11,50 @@ export const contentType = "image/png";
 const INK = "#2A1838";
 const PAPER = "#FFF7EA";
 const T: Wordmark = WORDMARKS.title;
-const TONES = ["#FFC9A0", "#C9B6F3", "#A6E6EE", "#F8A9CF", "#FFD889", "#8AD3E3"];
-
-// Satori has no emoji or non-Latin fonts bundled offline (it would fetch them), so cards keep Latin text only.
-const latin = (s: string) => s.replace(/[^\u0020-\u024F\u2018-\u201D\u2026]/g, "").replace(/\s+/g, " ").trim();
-const compact = new Intl.NumberFormat("en-US", { notation: "compact" });
 
 const black = await readFile(join(process.cwd(), "assets/Archivo-Black.woff"));
 const regular = await readFile(join(process.cwd(), "assets/Archivo-Regular.woff"));
 
-// Most-liked posts with a usable Latin excerpt, laid out as faded cards behind the title like the hero pile.
-const cards = [...posts]
-  .sort((a, b) => b.likeCount - a.likeCount)
-  .map((p) => ({ ...p, name: latin(p.author.name) || p.author.handle, body: latin(p.text) }))
-  .filter((p) => p.body.length > 40)
-  .slice(0, 6);
+// Real captures of the most-liked posts (official X embed, light theme), made once by
+// scripts/capture-og-tweets.mjs and committed in assets/og/. Read from disk: no fetch at build or request time.
+type Shot = { id: string; handle: string; w: number; h: number };
+const ogDir = join(process.cwd(), "assets/og");
+const shots: (Shot & { src: string })[] = await Promise.all(
+  (JSON.parse(await readFile(join(ogDir, "cards.json"), "utf8")) as Shot[]).map(async (s) => ({
+    ...s,
+    src: `data:image/jpeg;base64,${(await readFile(join(ogDir, `${s.id}.jpg`))).toString("base64")}`,
+  })),
+);
+const CARD_W = 360;
+// Right half holds the readable pile; the two left cards sit low and faded so the wordmark stays clean.
 const spots = [
-  { left: 560, top: -40, rot: 6 },
-  { left: 860, top: 60, rot: -5 },
-  { left: 640, top: 250, rot: -3 },
-  { left: 900, top: 360, rot: 5 },
-  { left: 520, top: 470, rot: 4 },
-  { left: 30, top: 470, rot: -6 },
+  { left: 820, top: 250, rot: -4, o: 1 },
+  { left: 800, top: -40, rot: 6, o: 1 },
+  { left: 600, top: 120, rot: -6, o: 1 },
+  { left: 560, top: 400, rot: 4, o: 1 },
+  { left: 300, top: 500, rot: -3, o: 1 },
+  { left: 10, top: 510, rot: 5, o: 1 },
 ];
 
-function Card({ post, i }: { post: (typeof cards)[number]; i: number }) {
-  const s = spots[i];
+function Card({ shot, i }: { shot: (typeof shots)[number]; i: number }) {
+  const s = spots[i % spots.length];
   return (
     <div
       style={{
         position: "absolute",
         left: s.left,
         top: s.top,
-        width: 360,
         display: "flex",
-        flexDirection: "column",
-        gap: 10,
-        padding: 18,
         background: "#FFFFFF",
         border: `3px solid ${INK}`,
-        borderRadius: 14,
+        borderRadius: 16,
+        boxShadow: `6px 6px 0 rgba(42,24,56,0.35)`,
+        overflow: "hidden",
         transform: `rotate(${s.rot}deg)`,
-        opacity: 0.55,
-        color: INK,
+        opacity: s.o,
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <div
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 40,
-            background: TONES[i % TONES.length],
-            border: `2px solid ${INK}`,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 20,
-            fontWeight: 900,
-          }}
-        >
-          {post.author.handle.slice(0, 1).toUpperCase()}
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <span style={{ fontSize: 18, fontWeight: 900 }}>{post.name.slice(0, 22)}</span>
-          <span style={{ fontSize: 15, opacity: 0.6 }}>@{post.author.handle}</span>
-        </div>
-      </div>
-      <span style={{ fontSize: 17, lineHeight: 1.3, maxHeight: 88, overflow: "hidden" }}>{post.body.slice(0, 120)}</span>
-      <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 15, color: "#F0559E", fontWeight: 900 }}>
-        <svg width={16} height={16} viewBox="0 0 24 24">
-          <path d="M12 21s-7.5-4.6-9.5-9.3C1 8 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.5 4.5 7.2C19.5 16.4 12 21 12 21z" fill="#F0559E" />
-        </svg>
-        {compact.format(post.likeCount)}
-      </div>
+      <img src={shot.src} width={CARD_W} height={(CARD_W * shot.h) / shot.w} alt="" />
     </div>
   );
 }
@@ -106,8 +76,8 @@ export default function Image() {
           border: "14px solid #22122F",
         }}
       >
-        {cards.map((p, i) => (
-          <Card key={p.id} post={p} i={i} />
+        {shots.map((s, i) => (
+          <Card key={s.id} shot={s} i={i} />
         ))}
         {/* No blur filter in satori: a tinted wash over the cards stands in for the hero's tint + fade. */}
         <div
@@ -115,7 +85,7 @@ export default function Image() {
             position: "absolute",
             inset: 0,
             display: "flex",
-            background: "linear-gradient(90deg, rgba(229,155,211,0.92) 0%, rgba(229,155,211,0.7) 45%, rgba(229,155,211,0.15) 100%)",
+            background: "linear-gradient(90deg, rgba(229,155,211,0.9) 0%, rgba(229,155,211,0.75) 40%, rgba(229,155,211,0.3) 58%, rgba(229,155,211,0.12) 100%)",
           }}
         />
         <div style={{ position: "absolute", left: 50, top: 46, display: "flex", transform: "rotate(-4deg)" }}>
