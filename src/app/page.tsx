@@ -178,6 +178,23 @@ export default function Home() {
           </a>{" "}
           from Rockstar Newswire. Data refreshed {long.format(new Date(updatedAt))}.
         </p>
+        <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-paper/75">
+          Shipped this before GTA 6 dropped.
+          <a
+            href="https://x.com/MajorBaguette"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-semibold text-paper hover:text-pink"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/major-pfp.png" alt="" width={24} height={24} className="size-6 rounded-full object-cover ring-1 ring-paper/20" />
+            @MajorBaguette
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href="https://accura.dev" target="_blank" rel="noopener noreferrer" className="font-semibold text-paper hover:text-pink">
+            accura.dev
+          </a>
+        </p>
       </footer>
     </main>
   );

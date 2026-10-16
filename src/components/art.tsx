@@ -1,11 +1,13 @@
-import { WORDMARKS } from "@/lib/wordmarks";
+import { useId } from "react";
+import { WORDMARKS, type Wordmark as Mark } from "@/lib/wordmarks";
 import type { Post } from "@/lib/site";
 
 const INK = "#2A1838";
 
 // Pricedown title artwork: white letters, thick ink outline, hard drop shadow (cover-logo treatment).
 export function Wordmark({ name, className }: { name: keyof typeof WORDMARKS; className?: string }) {
-  const m = WORDMARKS[name];
+  const m: Mark = WORDMARKS[name];
+  const sunset = useId();
   const pad = 9;
   return (
     <svg
@@ -17,6 +19,16 @@ export function Wordmark({ name, className }: { name: keyof typeof WORDMARKS; cl
       <path d={m.d} transform="translate(6 7)" fill={INK} stroke={INK} strokeWidth="12" strokeLinejoin="round" />
       <path d={m.d} fill={INK} stroke={INK} strokeWidth="11" strokeLinejoin="round" />
       <path d={m.d} fill="#FFFFFF" />
+      {m.accent && (
+        <>
+          <linearGradient id={sunset} x1="0" y1="160" x2="0" y2="224" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#FFB347" />
+            <stop offset="0.5" stopColor="#F0559E" />
+            <stop offset="1" stopColor="#8A4FE0" />
+          </linearGradient>
+          <path d={m.accent} fill={`url(#${sunset})`} />
+        </>
+      )}
     </svg>
   );
 }

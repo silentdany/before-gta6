@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BIV">
+  <!-- "BIV" set in Pricedown (Typodermic), outlined to fixed vector artwork (Desktop EULA 2.2); no font software included. -->
+  <defs>
+    <linearGradient id="biv-sunset" x1="0" y1="18.0" x2="0" y2="46.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFB347"/>
+      <stop offset="0.5" stop-color="#F0559E"/>
+      <stop offset="1" stop-color="#8A4FE0"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#22122F"/>
+  <path fill="url(#biv-sunset)" d="M15.38 29.12C15.38 29.17 15.33 29.21 15.29 29.21H13.14V24.99H15.29C15.33 24.99 15.38 25.04 15.38 25.08ZM19.94 46.03C22.97 46.03 24.51 44.89 24.51 42.56V34.31C24.51 32.94 23.76 32.2 22.23 31.98C23.72 31.8 24.47 31.06 24.47 29.69V21.52C24.47 19.15 22.97 17.97 19.94 17.97H4V46.03ZM15.38 38.96C15.38 39.01 15.33 39.05 15.29 39.05H13.14V34.79H15.29C15.33 34.79 15.38 34.83 15.38 34.88ZM35.89 46.03V17.97H26.75V46.03ZM55.39 46.03 60 17.97H51.08L48.8 34.92L46.47 17.97H37.2L41.73 46.03Z"/>
+</svg>
