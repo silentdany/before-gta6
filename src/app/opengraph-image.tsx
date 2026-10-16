@@ -36,6 +36,13 @@ const spots = [
   { left: 10, top: 510, rot: 5, o: 1 },
 ];
 
+// Featured card (@rauchg) takes the large centre-right spot (index 2) and renders last, on top.
+const FEATURED = "2110957024934858815";
+const fi = shots.findIndex((s) => s.id === FEATURED);
+const slot = shots.map((_, i) => i);
+if (fi >= 0) [slot[fi], slot[2]] = [slot[2], slot[fi]];
+const layered = shots.map((s, k) => ({ s, i: slot[k] })).sort((a, b) => Number(a.s.id === FEATURED) - Number(b.s.id === FEATURED));
+
 function Card({ shot, i }: { shot: (typeof shots)[number]; i: number }) {
   const s = spots[i % spots.length];
   return (
@@ -76,7 +83,7 @@ export default function Image() {
           border: "14px solid #22122F",
         }}
       >
-        {shots.map((s, i) => (
+        {layered.map(({ s, i }) => (
           <Card key={s.id} shot={s} i={i} />
         ))}
         {/* No blur filter in satori: a tinted wash over the cards stands in for the hero's tint + fade. */}
