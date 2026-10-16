@@ -4,40 +4,42 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  Comic-panel Leonida, golden hour.
+  night  — the dark aubergine gutters between panels, page background
+  ink    — outlines, sticker strokes and text on pastel panels
+  paper  — caption boxes and text on the dark gutters
+  pink   — the one hot accent (likes, active sort)
+  sun    — warm highlight for hovers
+  cat-*  — pastel panel stock, one per category
+*/
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist);
-  --font-display: var(--font-anton);
-  --color-ink: #140B22;
-  --color-panel: #1F1233;
-  --color-panel-hover: #26173D;
-  --color-pink: #FF3D8B;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-archivo);
   --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
+
+  --color-night: #22122F;
+  --color-night-hi: #2E1A3E;
+  --color-ink: #2A1838;
+  --color-paper: #FFF7EA;
+  --color-pink: #F0559E;
+  --color-sun: #FFD27A;
+
+  --color-cat-tech: #A6E6EE;
+  --color-cat-gaming: #F8B6D7;
+  --color-cat-life: #FFD3AA;
+  --color-cat-news: #BDECCB;
+  --color-cat-absurd: #FFE48F;
+  --color-cat-other: #D5C3F6;
+
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
@@ -48,94 +50,194 @@
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #22122F;
+  --foreground: #FFF7EA;
+  --card: #2E1A3E;
+  --card-foreground: #FFF7EA;
+  --popover: #2E1A3E;
+  --popover-foreground: #FFF7EA;
+  --primary: #FFF7EA;
+  --primary-foreground: #2A1838;
+  --muted: #2E1A3E;
+  --muted-foreground: rgb(255 247 234 / 0.6);
+  --accent: #2E1A3E;
+  --accent-foreground: #FFF7EA;
+  --border: rgb(255 247 234 / 0.1);
+  --input: rgb(255 247 234 / 0.14);
+  --ring: #FFD27A;
+  --radius: 0.5rem;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
+  * { @apply border-border outline-ring/60; }
+  html { @apply font-sans; scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; }
+  ::selection { background: #F0559E; color: #2A1838; }
+  :focus-visible { outline: 3px solid #FFD27A; outline-offset: 2px; }
+}
+
+/* Paper grain over everything, so flat gradients read as airbrushed print. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ───────── Collage ───────── */
+.collage {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(440px, 62svh) 220px minmax(260px, auto) minmax(220px, auto) 180px;
+  grid-template-areas:
+    "title title"
+    "count since"
+    "top top"
+    "p2 p3"
+    "wall wall";
+}
+@media (min-width: 768px) {
+  .collage {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 290px 270px 240px 240px;
+    grid-template-areas:
+      "title title count"
+      "title title since"
+      "top p2 since"
+      "top p3 wall";
   }
 }
-.panel { border: 3px solid #0A0612; border-radius: 4px; box-shadow: 0 0 0 1px rgb(255 255 255 / 0.06) inset; }
-.sunset { background: linear-gradient(180deg, #2B1055 0%, #7A2D8F 30%, #FF3D8B 58%, #FF8A3D 78%, #FFC46B 100%); }
-.lagoon { background: linear-gradient(160deg, #1BB5C9 0%, #3B6FD6 100%); }
-.dusk { background: linear-gradient(160deg, #FF8A3D 0%, #FF3D8B 100%); }
-.violet { background: linear-gradient(160deg, #8A3FD1 0%, #3A1F6E 100%); }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+@media (min-width: 1024px) {
+  .collage {
+    height: clamp(600px, calc(100svh - 24px), 860px);
+    grid-template-columns: 0.95fr 1.3fr 1.3fr 0.95fr;
+    grid-template-rows: 1fr 1fr 0.86fr;
+    grid-template-areas:
+      "p2 title title count"
+      "since title title top"
+      "since p3 wall top";
+  }
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  isolation: isolate;
+  color: #2A1838;
+}
+a.panel { transition: filter 0.2s; }
+a.panel:hover { filter: brightness(1.05) saturate(1.06); }
+
+/* Pastel panel stock, airbrushed like the cover's skies */
+.dusk {
+  background:
+    radial-gradient(70% 60% at 82% 100%, rgb(255 231 168 / 0.95), transparent 70%),
+    linear-gradient(180deg, #A996EE 0%, #E59BD3 45%, #FFB08C 78%, #FFD889 100%);
+}
+.lagoon { background: linear-gradient(165deg, #B9EEF2 0%, #8AD3E3 55%, #7DB7E8 100%); }
+.flamingo { background: linear-gradient(165deg, #FFD0E5 0%, #F8A9CF 60%, #F28CBD 100%); }
+.peach { background: linear-gradient(165deg, #FFE7C7 0%, #FFC9A0 100%); }
+.lilac { background: linear-gradient(165deg, #ECE2FC 0%, #C9B6F3 100%); }
+
+/* Comic halftone, fading out from one corner */
+.halftone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgb(42 24 56 / 0.22) 1.6px, transparent 2.1px);
+  background-size: 10px 10px;
+  -webkit-mask-image: radial-gradient(90% 90% at 100% 100%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(90% 90% at 100% 100%, #000 0%, transparent 70%);
+}
+.dusk.halftone::before {
+  background-image: radial-gradient(circle, rgb(255 255 255 / 0.35) 1.8px, transparent 2.3px);
+  -webkit-mask-image: radial-gradient(70% 80% at 0% 100%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(70% 80% at 0% 100%, #000 0%, transparent 70%);
+}
+
+.sunburst {
+  background:
+    radial-gradient(circle at 28% 30%, rgb(255 244 200 / 0.9) 0 14%, transparent 42%),
+    repeating-conic-gradient(from 0deg at 28% 30%, #FF9BB8 0deg 9deg, #FFB08C 9deg 18deg),
+    #FFB08C;
+}
+.ripples {
+  background:
+    repeating-radial-gradient(circle at 80% 110%, transparent 0 18px, rgb(255 255 255 / 0.35) 18px 21px),
+    linear-gradient(160deg, #A6E6EE, #9E8FE6);
+}
+
+/* Lowercase sticker type: white letters, thick ink outline, hard offset shadow. */
+.sticker {
+  font-weight: 900;
+  font-stretch: 118%;
+  letter-spacing: -0.01em;
+  word-spacing: 0.04em;
+  line-height: 0.86;
+  color: #FFFFFF;
+  -webkit-text-stroke: 0.085em #2A1838;
+  paint-order: stroke fill;
+  text-shadow: 0.05em 0.07em 0 #2A1838;
+}
+
+/* Comic caption box */
+.caption {
+  display: inline-block;
+  background: #FFF7EA;
+  color: #2A1838;
+  border: 2px solid #2A1838;
+  box-shadow: 3px 3px 0 #2A1838;
+  padding: 0.45rem 0.7rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ───────── Wall panels ───────── */
+.card-panel {
+  background:
+    radial-gradient(130% 90% at 100% 0%, rgb(255 255 255 / 0.55), transparent 55%),
+    linear-gradient(170deg, color-mix(in oklab, var(--cat) 70%, #FFFFFF), var(--cat));
+}
+.card-panel.top-panel {
+  background:
+    radial-gradient(60% 80% at 85% 100%, rgb(255 231 168 / 0.9), transparent 60%),
+    linear-gradient(180deg, #A996EE 0%, #E59BD3 50%, #FFB08C 100%);
+}
+
+/* ───────── Dialog ───────── */
+dialog.post-dialog::backdrop {
+  background: rgb(20 9 30 / 0.75);
+  backdrop-filter: blur(6px);
+}
+dialog.post-dialog[open] { animation: dialog-in 0.22s cubic-bezier(.2, .8, .2, 1); }
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+}
+
+/* The one page-load moment: panels drop into the collage, staggered. */
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+}
+.collage > .panel { animation: panel-in 0.6s cubic-bezier(.2, .8, .2, 1) both; }
+.collage > .panel:nth-child(1) { animation-delay: 0.05s; }
+.collage > .panel:nth-child(2) { animation-delay: 0.16s; }
+.collage > .panel:nth-child(3) { animation-delay: 0.22s; }
+.collage > .panel:nth-child(4) { animation-delay: 0.28s; }
+.collage > .panel:nth-child(5) { animation-delay: 0.34s; }
+.collage > .panel:nth-child(6) { animation-delay: 0.4s; }
+.collage > .panel:nth-child(7) { animation-delay: 0.46s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}

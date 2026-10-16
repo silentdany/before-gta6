@@ -25,13 +25,17 @@ export function XEmbed({ id }: { id: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let alive = true;
-    loadWidgets().then(() => {
+    const fail = () => {
+      if (alive && ref.current) ref.current.textContent = "This post can't be shown here. Use “Open on X” to read it.";
+    };
+    loadWidgets().then(async () => {
       if (alive && ref.current && window.twttr) {
         ref.current.innerHTML = "";
-        window.twttr.widgets.createTweet(id, ref.current, { theme: "dark", dnt: true, conversation: "none" });
+        const el = await window.twttr.widgets.createTweet(id, ref.current, { theme: "dark", dnt: true, conversation: "none", align: "center" });
+        if (!el) fail();
       }
-    }).catch(() => {});
+    }).catch(fail);
     return () => { alive = false; };
   }, [id]);
-  return <div ref={ref} className="min-h-24 text-sm text-white/60">Loading post…</div>;
+  return <div ref={ref} className="min-h-24 py-6 text-center text-sm text-paper/60">Loading the post from X…</div>;
 }

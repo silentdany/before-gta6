@@ -1,42 +1,101 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { posts } from "@/lib/site";
 
 export const alt = "Before GTA 6 — everything we got before GTA 6";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const palm = (x: number, h: number, flip = 1) => (
-  <svg width="260" height={h} viewBox="0 0 260 300" style={{ position: "absolute", bottom: 0, left: x, transform: `scaleX(${flip})` }}>
-    <path d="M120,300 Q130,160 150,60 L156,62 Q140,170 132,300Z" fill="#140B22" />
-    <path d="M150,60 Q90,30 20,70 Q90,50 150,60Z M150,60 Q120,0 60,10 Q120,20 150,60Z M150,60 Q200,0 250,30 Q190,25 150,60Z M150,60 Q230,60 255,120 Q210,70 150,60Z M150,60 Q100,80 70,150 Q110,90 150,60Z" fill="#140B22" />
-  </svg>
-);
+const INK = "#2A1838";
+const GUTTER = "#22122F";
+
+// Same comic-panel language as the page: pastel panels, dark gutters, sticker type, caption boxes.
+const sticker = (fontSize: number) => ({
+  fontFamily: "Archivo",
+  fontWeight: 900,
+  fontSize,
+  lineHeight: 0.86,
+  letterSpacing: -2,
+  color: "white",
+  textShadow: `0 0 2px ${INK}, 3px 3px 0 ${INK}, -3px 3px 0 ${INK}, 3px -3px 0 ${INK}, -3px -3px 0 ${INK}, 0 4px 0 ${INK}, 4px 0 0 ${INK}, -4px 0 0 ${INK}, 0 -4px 0 ${INK}, 7px 9px 0 ${INK}`,
+});
+const caption = {
+  display: "flex",
+  background: "#FFF7EA",
+  color: INK,
+  border: `3px solid ${INK}`,
+  boxShadow: `4px 4px 0 ${INK}`,
+  padding: "10px 16px",
+  fontSize: 28,
+  fontWeight: 400,
+};
+
+const black = await readFile(join(process.cwd(), "assets/Archivo-Black.woff"));
+const regular = await readFile(join(process.cwd(), "assets/Archivo-Regular.woff"));
 
 export default function Image() {
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", background: "#0A0612", padding: 14, gap: 14 }}>
-        <div style={{ flex: 2, display: "flex", flexDirection: "column", justifyContent: "flex-end", position: "relative", overflow: "hidden", padding: 48,
-          background: "linear-gradient(180deg, #2B1055 0%, #7A2D8F 30%, #FF3D8B 58%, #FF8A3D 78%, #FFC46B 100%)" }}>
-          <div style={{ position: "absolute", top: 90, left: 330, width: 220, height: 220, borderRadius: 999, background: "linear-gradient(180deg,#FFE29A,#FF6B6B)" }} />
-          {palm(-40, 420)}
-          {palm(560, 480, -1)}
-          <div style={{ display: "flex", flexDirection: "column", fontSize: 120, fontWeight: 900, color: "white", lineHeight: 0.9, letterSpacing: -3, textTransform: "uppercase" }}>
-            <span>We got it</span>
-            <span>before GTA 6</span>
+      <div style={{ width: "100%", height: "100%", display: "flex", background: GUTTER, padding: 14, gap: 14, fontFamily: "Archivo" }}>
+        <div
+          style={{
+            flex: 1.75,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: 46,
+            borderRadius: 4,
+            background: "linear-gradient(180deg, #A996EE 0%, #E59BD3 45%, #FFB08C 78%, #FFD889 100%)",
+          }}
+        >
+          <div style={{ display: "flex", flexDirection: "column", transform: "rotate(-3deg)" }}>
+            <span style={sticker(78)}>we got it</span>
+            <span style={{ ...sticker(150), marginTop: 10 }}>before</span>
+            <span style={{ ...sticker(150), marginTop: 6 }}>gta 6</span>
           </div>
+          <div style={{ ...caption, alignSelf: "flex-start" }}>The internet’s longest-running joke, collected.</div>
         </div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 14 }}>
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: 32, background: "linear-gradient(160deg,#1BB5C9,#3B6FD6)", color: "white" }}>
-            <span style={{ fontSize: 96, fontWeight: 900 }}>{posts.length}</span>
-            <span style={{ fontSize: 32 }}>things on the wall</span>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              padding: 30,
+              borderRadius: 4,
+              background: "linear-gradient(165deg, #B9EEF2 0%, #8AD3E3 55%, #7DB7E8 100%)",
+            }}
+          >
+            <span style={sticker(120)}>{posts.length}</span>
+            <div style={caption}>things got here first</div>
           </div>
-          <div style={{ flex: 1, display: "flex", alignItems: "center", padding: 32, background: "linear-gradient(160deg,#FF8A3D,#FF3D8B)", color: "white", fontSize: 40, fontWeight: 800 }}>
-            Live countdown to Nov 19, 2026
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+              alignItems: "flex-start",
+              padding: 30,
+              borderRadius: 4,
+              background: "linear-gradient(165deg, #FFD0E5 0%, #F8A9CF 60%, #F28CBD 100%)",
+            }}
+          >
+            <span style={{ fontSize: 22, fontWeight: 400, color: INK, opacity: 0.75 }}>Out</span>
+            <span style={{ fontSize: 50, fontWeight: 900, color: INK, lineHeight: 1 }}>November 19, 2026</span>
           </div>
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        { name: "Archivo", data: black, weight: 900, style: "normal" },
+        { name: "Archivo", data: regular, weight: 400, style: "normal" },
+      ],
+    },
   );
 }

@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Geist } from "next/font/google";
+import { Archivo } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const sans = Geist({ variable: "--font-geist", subsets: ["latin"] });
-const display = Anton({ variable: "--font-anton", weight: "400", subsets: ["latin"] });
+// One family, two voices: Archivo's width axis goes from condensed card titles to the wide sticker headline.
+const sans = Archivo({ variable: "--font-archivo", subsets: ["latin"], axes: ["wdth"] });
 
 const title = "Before GTA 6 — everything we got before GTA 6";
 const description =
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export const viewport: Viewport = { themeColor: "#140B22" };
+export const viewport: Viewport = { themeColor: "#22122F" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${sans.variable} ${display.variable} dark antialiased`}>
-      <body className="min-h-dvh bg-ink font-sans text-white">{children}</body>
+    <html lang="en" className={`${sans.variable} dark antialiased`}>
+      <body className="min-h-dvh bg-night font-sans text-paper">{children}</body>
     </html>
   );
 }
