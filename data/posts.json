@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T08:16:51.059Z",
+  "updatedAt": "2026-10-17T05:25:11.371Z",
   "posts": [
     {
       "id": "2033666003717050798",
@@ -10,7 +10,7 @@
         "handle": "TukiFromKL"
       },
       "url": "https://x.com/TukiFromKL/status/2033666003717050798",
-      "likeCount": 9844,
+      "likeCount": 9842,
       "date": "2026-03-16T22:05:33.000Z",
       "category": "tech",
       "media": true
@@ -24,7 +24,7 @@
         "handle": "DarkViperAU"
       },
       "url": "https://x.com/DarkViperAU/status/1885984055382192133",
-      "likeCount": 7285,
+      "likeCount": 7286,
       "date": "2025-02-02T09:30:13.000Z",
       "category": "absurd",
       "media": false
@@ -38,10 +38,38 @@
         "handle": "EFCevie"
       },
       "url": "https://x.com/EFCevie/status/1966139497332253148",
-      "likeCount": 4326,
+      "likeCount": 4322,
       "date": "2025-09-11T13:59:19.000Z",
       "category": "personal life",
       "media": true
+    },
+    {
+      "id": "2110957024934858815",
+      "thing": "A Vercel zeppelin and flying cars",
+      "text": "TLDR we got Vercel zeppelin and flying cars before GTA6",
+      "author": {
+        "name": "Guillermo Rauch",
+        "handle": "rauchg"
+      },
+      "url": "https://x.com/rauchg/status/2110957024934858815",
+      "likeCount": 1014,
+      "date": "2026-10-16T04:52:29.000Z",
+      "category": "tech",
+      "media": true
+    },
+    {
+      "id": "2111179897897185484",
+      "thing": "Actual flying cars (French)",
+      "text": "On a vraiment eu les voitures volantes avant GTA 6",
+      "author": {
+        "name": "Name Jr",
+        "handle": "ItsNameJr"
+      },
+      "url": "https://x.com/ItsNameJr/status/2111179897897185484",
+      "likeCount": 923,
+      "date": "2026-10-16T19:38:06.000Z",
+      "category": "tech",
+      "media": false
     },
     {
       "id": "2103400199901123032",
@@ -69,20 +97,6 @@
       "likeCount": 403,
       "date": "2025-07-07T12:24:44.000Z",
       "category": "gaming",
-      "media": true
-    },
-    {
-      "id": "2110957024934858815",
-      "thing": "A Vercel zeppelin and flying cars",
-      "text": "TLDR we got Vercel zeppelin and flying cars before GTA6",
-      "author": {
-        "name": "Guillermo Rauch",
-        "handle": "rauchg"
-      },
-      "url": "https://x.com/rauchg/status/2110957024934858815",
-      "likeCount": 397,
-      "date": "2026-10-16T04:52:29.000Z",
-      "category": "tech",
       "media": true
     },
     {
@@ -122,7 +136,7 @@
         "handle": "ali_hld13"
       },
       "url": "https://x.com/ali_hld13/status/2101031001547768292",
-      "likeCount": 169,
+      "likeCount": 170,
       "date": "2026-09-18T19:30:00.000Z",
       "category": "gaming",
       "media": false
@@ -170,6 +184,34 @@
       "media": false
     },
     {
+      "id": "2111031703355453621",
+      "thing": "Real-life Rocket League (French)",
+      "text": "On a Rocket League IRL avant GTA 6 💀",
+      "author": {
+        "name": "oraxe",
+        "handle": "oraxe_"
+      },
+      "url": "https://x.com/oraxe_/status/2111031703355453621",
+      "likeCount": 44,
+      "date": "2026-10-16T09:49:13.000Z",
+      "category": "absurd",
+      "media": false
+    },
+    {
+      "id": "2110715552067121159",
+      "thing": "YC coaching in India",
+      "text": "We got YC Coaching in India before GTA 6",
+      "author": {
+        "name": "Snehil Saluja",
+        "handle": "mrsnhl"
+      },
+      "url": "https://x.com/mrsnhl/status/2110715552067121159",
+      "likeCount": 38,
+      "date": "2026-10-15T12:52:57.000Z",
+      "category": "absurd",
+      "media": false
+    },
+    {
       "id": "1833044015354106225",
       "thing": "Pronote dark mode",
       "text": "On a eu pronote mode sombre avant gta 6",
@@ -182,6 +224,20 @@
       "date": "2024-09-09T07:25:24.000Z",
       "category": "tech",
       "media": true
+    },
+    {
+      "id": "2110701363751518300",
+      "thing": "Vibecoding your own GTA 6",
+      "text": "You can now vibecode your own GTA6 before GTA6",
+      "author": {
+        "name": "Ben Cera",
+        "handle": "Bencera"
+      },
+      "url": "https://x.com/Bencera/status/2110701363751518300",
+      "likeCount": 35,
+      "date": "2026-10-15T11:56:34.000Z",
+      "category": "tech",
+      "media": false
     },
     {
       "id": "1955543727239467053",
@@ -350,6 +406,34 @@
       "date": "2024-11-22T05:09:32.000Z",
       "category": "tech",
       "media": true
+    },
+    {
+      "id": "2111301564254310498",
+      "thing": "AI music on vinyl",
+      "text": "oh we got AI music on vinyl before GTA6",
+      "author": {
+        "name": "ً",
+        "handle": "fanzhen0019"
+      },
+      "url": "https://x.com/fanzhen0019/status/2111301564254310498",
+      "likeCount": 7,
+      "date": "2026-10-17T03:41:33.000Z",
+      "category": "tech",
+      "media": true
+    },
+    {
+      "id": "2110608694941544565",
+      "thing": "A Martin fighting game",
+      "text": "We really got a Martin fighting game before GTA 6 Lmao",
+      "author": {
+        "name": "Shijishoutmon Digimon |VTuber|",
+        "handle": "Shijishoutmon"
+      },
+      "url": "https://x.com/Shijishoutmon/status/2110608694941544565",
+      "likeCount": 7,
+      "date": "2026-10-15T05:48:20.000Z",
+      "category": "gaming",
+      "media": false
     },
     {
       "id": "1918466235345293524",
