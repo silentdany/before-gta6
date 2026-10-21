@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T05:18:29.200Z",
+  "updatedAt": "2026-10-21T05:20:22.684Z",
   "posts": [
     {
       "id": "2033666003717050798",
@@ -10,7 +10,7 @@
         "handle": "TukiFromKL"
       },
       "url": "https://x.com/TukiFromKL/status/2033666003717050798",
-      "likeCount": 9840,
+      "likeCount": 9836,
       "date": "2026-03-16T22:05:33.000Z",
       "category": "tech",
       "media": true
@@ -24,7 +24,7 @@
         "handle": "DarkViperAU"
       },
       "url": "https://x.com/DarkViperAU/status/1885984055382192133",
-      "likeCount": 7282,
+      "likeCount": 7280,
       "date": "2025-02-02T09:30:13.000Z",
       "category": "absurd",
       "media": false
@@ -38,7 +38,7 @@
         "handle": "EFCevie"
       },
       "url": "https://x.com/EFCevie/status/1966139497332253148",
-      "likeCount": 4320,
+      "likeCount": 4319,
       "date": "2025-09-11T13:59:19.000Z",
       "category": "personal life",
       "media": true
@@ -52,7 +52,7 @@
         "handle": "rauchg"
       },
       "url": "https://x.com/rauchg/status/2110957024934858815",
-      "likeCount": 1064,
+      "likeCount": 1065,
       "date": "2026-10-16T04:52:29.000Z",
       "category": "tech",
       "media": true
@@ -108,7 +108,7 @@
         "handle": "mrdoob"
       },
       "url": "https://x.com/mrdoob/status/2112047651797762317",
-      "likeCount": 301,
+      "likeCount": 317,
       "date": "2026-10-19T05:06:14.000Z",
       "category": "gaming",
       "media": false
@@ -212,6 +212,20 @@
       "media": false
     },
     {
+      "id": "2112269416817955195",
+      "thing": "One more rewatch",
+      "text": "Allez encore un rewatch avant GTA 6",
+      "author": {
+        "name": "Yass 🩸",
+        "handle": "BonheurDeQuoi"
+      },
+      "url": "https://x.com/BonheurDeQuoi/status/2112269416817955195",
+      "likeCount": 111,
+      "date": "2026-10-19T19:47:27.000Z",
+      "category": "personal life",
+      "media": true
+    },
+    {
       "id": "1958733762155413577",
       "thing": "MonMorgy fan art",
       "text": "We got MonMorgy art before GTA6...",
@@ -226,20 +240,6 @@
       "media": false
     },
     {
-      "id": "2112269416817955195",
-      "thing": "One more rewatch",
-      "text": "Allez encore un rewatch avant GTA 6",
-      "author": {
-        "name": "Yass 🩸",
-        "handle": "BonheurDeQuoi"
-      },
-      "url": "https://x.com/BonheurDeQuoi/status/2112269416817955195",
-      "likeCount": 79,
-      "date": "2026-10-19T19:47:27.000Z",
-      "category": "personal life",
-      "media": false
-    },
-    {
       "id": "2111867403558633666",
       "thing": "Flying cars",
       "text": "We got flying cars before GTA6",
@@ -248,7 +248,7 @@
         "handle": "poe_real69"
       },
       "url": "https://x.com/poe_real69/status/2111867403558633666",
-      "likeCount": 77,
+      "likeCount": 78,
       "date": "2026-10-18T17:10:00.000Z",
       "category": "tech",
       "media": false
@@ -520,6 +520,20 @@
       "media": false
     },
     {
+      "id": "2112274890417905935",
+      "thing": "Papuan Scientology",
+      "text": "We got Papuan Scientology before GTA6",
+      "author": {
+        "name": "akhivae",
+        "handle": "akhivae"
+      },
+      "url": "https://x.com/akhivae/status/2112274890417905935",
+      "likeCount": 10,
+      "date": "2026-10-19T20:09:12.000Z",
+      "category": "absurd",
+      "media": false
+    },
+    {
       "id": "2017255376329048429",
       "thing": "Marshawn Lynch in the Game of Thrones universe",
       "text": "we got Marshawn Lynch in the GoT universe before GTA 6",
@@ -628,6 +642,20 @@
       "url": "https://x.com/tweetbyarumugam/status/1962168424865665294",
       "likeCount": 5,
       "date": "2025-08-31T14:59:42.000Z",
+      "category": "personal life",
+      "media": false
+    },
+    {
+      "id": "2112194015278035398",
+      "thing": "A one-month shower strike",
+      "text": "Il reste exactement 1 mois avant GTA 6 et vous croyez que j'vais me laver ????",
+      "author": {
+        "name": "SO🇲🇦🇵🇹",
+        "handle": "sofdico"
+      },
+      "url": "https://x.com/sofdico/status/2112194015278035398",
+      "likeCount": 5,
+      "date": "2026-10-19T14:47:50.000Z",
       "category": "personal life",
       "media": false
     },
