@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T05:20:22.684Z",
+  "updatedAt": "2026-10-22T05:23:00.247Z",
   "posts": [
     {
       "id": "2033666003717050798",
@@ -10,7 +10,7 @@
         "handle": "TukiFromKL"
       },
       "url": "https://x.com/TukiFromKL/status/2033666003717050798",
-      "likeCount": 9836,
+      "likeCount": 9835,
       "date": "2026-03-16T22:05:33.000Z",
       "category": "tech",
       "media": true
@@ -24,7 +24,7 @@
         "handle": "DarkViperAU"
       },
       "url": "https://x.com/DarkViperAU/status/1885984055382192133",
-      "likeCount": 7280,
+      "likeCount": 7279,
       "date": "2025-02-02T09:30:13.000Z",
       "category": "absurd",
       "media": false
@@ -52,10 +52,25 @@
         "handle": "rauchg"
       },
       "url": "https://x.com/rauchg/status/2110957024934858815",
-      "likeCount": 1065,
+      "likeCount": 1064,
       "date": "2026-10-16T04:52:29.000Z",
       "category": "tech",
       "media": true
+    },
+    {
+      "id": "2113069105838469603",
+      "thing": "A funeral for the “before GTA 6” meme",
+      "text": "We got a funeral for the “before GTA 6” meme before GTA 6. 😭",
+      "author": {
+        "name": "GTA 6",
+        "handle": "GTA_VI_6_"
+      },
+      "url": "https://x.com/GTA_VI_6_/status/2113069105838469603",
+      "likeCount": 593,
+      "date": "2026-10-22T00:45:08.000Z",
+      "category": "absurd",
+      "media": true,
+      "needsReview": true
     },
     {
       "id": "2103400199901123032",
@@ -80,7 +95,7 @@
         "handle": "not_mynes"
       },
       "url": "https://x.com/not_mynes/status/1942198092742189280",
-      "likeCount": 403,
+      "likeCount": 402,
       "date": "2025-07-07T12:24:44.000Z",
       "category": "gaming",
       "media": true
@@ -94,7 +109,7 @@
         "handle": "jacobfuknjones"
       },
       "url": "https://x.com/jacobfuknjones/status/2111199455412133954",
-      "likeCount": 322,
+      "likeCount": 324,
       "date": "2026-10-16T20:55:49.000Z",
       "category": "absurd",
       "media": true
@@ -108,7 +123,7 @@
         "handle": "mrdoob"
       },
       "url": "https://x.com/mrdoob/status/2112047651797762317",
-      "likeCount": 317,
+      "likeCount": 318,
       "date": "2026-10-19T05:06:14.000Z",
       "category": "gaming",
       "media": false
@@ -290,7 +305,7 @@
         "handle": "oraxe_"
       },
       "url": "https://x.com/oraxe_/status/2111031703355453621",
-      "likeCount": 48,
+      "likeCount": 47,
       "date": "2026-10-16T09:49:13.000Z",
       "category": "absurd",
       "media": false
@@ -464,6 +479,21 @@
       "media": false
     },
     {
+      "id": "2113080889961824695",
+      "thing": "The entire internet compromised",
+      "text": "The entire internet compromised before GTA 6",
+      "author": {
+        "name": "Jonah",
+        "handle": "JonahBlake"
+      },
+      "url": "https://x.com/JonahBlake/status/2113080889961824695",
+      "likeCount": 17,
+      "date": "2026-10-22T01:31:57.000Z",
+      "category": "other",
+      "media": false,
+      "needsReview": true
+    },
+    {
       "id": "2012746382021407211",
       "thing": "Someone playing GTA 6 before GTA 6",
       "text": "🥀So we got some dude getting GTA 6 before GTA 6 is out before GTA 6",
@@ -504,6 +534,21 @@
       "date": "2026-10-18T10:01:55.000Z",
       "category": "tech",
       "media": false
+    },
+    {
+      "id": "2113083402211434943",
+      "thing": "POKÉMON BASEBALL",
+      "text": "We really got POKÉMON BASEBALL before GTA 6",
+      "author": {
+        "name": "MLB Lockout Simulator 2027",
+        "handle": "lockout2027"
+      },
+      "url": "https://x.com/lockout2027/status/2113083402211434943",
+      "likeCount": 12,
+      "date": "2026-10-22T01:41:56.000Z",
+      "category": "gaming",
+      "media": false,
+      "needsReview": true
     },
     {
       "id": "1978629142573699122",
@@ -602,6 +647,21 @@
       "date": "2025-05-03T00:42:48.000Z",
       "category": "personal life",
       "media": false
+    },
+    {
+      "id": "2112884105335448026",
+      "thing": "Avant GTA 6, Xbox annonce l'arrivée d'une énorme nouveauté sur les Xbox Series e",
+      "text": "Avant GTA 6, Xbox annonce l'arrivée d'une énorme nouveauté sur les Xbox Series et Xbox Ally qui va tout changer 🤯",
+      "author": {
+        "name": "Gameblog Jeux Vidéo",
+        "handle": "Gameblog"
+      },
+      "url": "https://x.com/Gameblog/status/2112884105335448026",
+      "likeCount": 6,
+      "date": "2026-10-21T12:30:00.000Z",
+      "category": "gaming",
+      "media": false,
+      "needsReview": true
     },
     {
       "id": "1890879598809780463",
@@ -982,20 +1042,6 @@
       "media": false
     },
     {
-      "id": "2088694478806659217",
-      "thing": "A VCL team in the VCT playoffs",
-      "text": "Pretty cool stuff going on in #VCT right now. We really did get the first VCL team in VCT playoffs before GTA 6 We Got the First VCL Team in VCT Playoffs Before GTA 6: Enterprise Esports -",
-      "author": {
-        "name": "Gabby DeSena",
-        "handle": "gabdesports"
-      },
-      "url": "https://x.com/gabdesports/status/2088694478806659217",
-      "likeCount": 1,
-      "date": "2026-08-15T18:29:04.000Z",
-      "category": "gaming",
-      "media": false
-    },
-    {
       "id": "2104381887263502363",
       "thing": "A Nirvana reunion",
       "text": "nirvana reunion before gta6",
@@ -1077,6 +1123,20 @@
       "likeCount": 1,
       "date": "2025-11-08T02:05:48.000Z",
       "category": "other",
+      "media": false
+    },
+    {
+      "id": "2088694478806659217",
+      "thing": "A VCL team in the VCT playoffs",
+      "text": "Pretty cool stuff going on in #VCT right now. We really did get the first VCL team in VCT playoffs before GTA 6 We Got the First VCL Team in VCT Playoffs Before GTA 6: Enterprise Esports -",
+      "author": {
+        "name": "Gabby DeSena",
+        "handle": "gabdesports"
+      },
+      "url": "https://x.com/gabdesports/status/2088694478806659217",
+      "likeCount": 0,
+      "date": "2026-08-15T18:29:04.000Z",
+      "category": "gaming",
       "media": false
     },
     {
