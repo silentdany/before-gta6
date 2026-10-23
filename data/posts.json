@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T05:23:00.247Z",
+  "updatedAt": "2026-10-23T05:18:38.258Z",
   "posts": [
     {
       "id": "2033666003717050798",
@@ -10,7 +10,7 @@
         "handle": "TukiFromKL"
       },
       "url": "https://x.com/TukiFromKL/status/2033666003717050798",
-      "likeCount": 9835,
+      "likeCount": 9837,
       "date": "2026-03-16T22:05:33.000Z",
       "category": "tech",
       "media": true
@@ -24,10 +24,24 @@
         "handle": "DarkViperAU"
       },
       "url": "https://x.com/DarkViperAU/status/1885984055382192133",
-      "likeCount": 7279,
+      "likeCount": 7278,
       "date": "2025-02-02T09:30:13.000Z",
       "category": "absurd",
       "media": false
+    },
+    {
+      "id": "2113069105838469603",
+      "thing": "A funeral for the \"before GTA 6\" meme itself",
+      "text": "We got a funeral for the “before GTA 6” meme before GTA 6. 😭",
+      "author": {
+        "name": "GTA 6",
+        "handle": "GTA_VI_6_"
+      },
+      "url": "https://x.com/GTA_VI_6_/status/2113069105838469603",
+      "likeCount": 4725,
+      "date": "2026-10-22T00:45:08.000Z",
+      "category": "absurd",
+      "media": true
     },
     {
       "id": "1966139497332253148",
@@ -38,7 +52,7 @@
         "handle": "EFCevie"
       },
       "url": "https://x.com/EFCevie/status/1966139497332253148",
-      "likeCount": 4319,
+      "likeCount": 4316,
       "date": "2025-09-11T13:59:19.000Z",
       "category": "personal life",
       "media": true
@@ -52,23 +66,9 @@
         "handle": "rauchg"
       },
       "url": "https://x.com/rauchg/status/2110957024934858815",
-      "likeCount": 1064,
+      "likeCount": 1063,
       "date": "2026-10-16T04:52:29.000Z",
       "category": "tech",
-      "media": true
-    },
-    {
-      "id": "2113069105838469603",
-      "thing": "A funeral for the \"before GTA 6\" meme itself",
-      "text": "We got a funeral for the “before GTA 6” meme before GTA 6. 😭",
-      "author": {
-        "name": "GTA 6",
-        "handle": "GTA_VI_6_"
-      },
-      "url": "https://x.com/GTA_VI_6_/status/2113069105838469603",
-      "likeCount": 593,
-      "date": "2026-10-22T00:45:08.000Z",
-      "category": "absurd",
       "media": true
     },
     {
@@ -100,20 +100,6 @@
       "media": true
     },
     {
-      "id": "2111199455412133954",
-      "thing": "Smoking a cigarette",
-      "text": "Smoking a Cigarette Before GTA VI",
-      "author": {
-        "name": "jacob jones",
-        "handle": "jacobfuknjones"
-      },
-      "url": "https://x.com/jacobfuknjones/status/2111199455412133954",
-      "likeCount": 324,
-      "date": "2026-10-16T20:55:49.000Z",
-      "category": "absurd",
-      "media": true
-    },
-    {
       "id": "2112047651797762317",
       "thing": "GTA 7",
       "text": "We got GTA 7 before GTA 6",
@@ -122,10 +108,24 @@
         "handle": "mrdoob"
       },
       "url": "https://x.com/mrdoob/status/2112047651797762317",
-      "likeCount": 318,
+      "likeCount": 329,
       "date": "2026-10-19T05:06:14.000Z",
       "category": "gaming",
       "media": false
+    },
+    {
+      "id": "2111199455412133954",
+      "thing": "Smoking a cigarette",
+      "text": "Smoking a Cigarette Before GTA VI",
+      "author": {
+        "name": "jacob jones",
+        "handle": "jacobfuknjones"
+      },
+      "url": "https://x.com/jacobfuknjones/status/2111199455412133954",
+      "likeCount": 325,
+      "date": "2026-10-16T20:55:49.000Z",
+      "category": "absurd",
+      "media": true
     },
     {
       "id": "2105306860194775059",
@@ -140,6 +140,20 @@
       "date": "2026-09-30T14:40:44.000Z",
       "category": "gaming",
       "media": true
+    },
+    {
+      "id": "2113142416223920246",
+      "thing": "Finishing the gaming backlog (or pretending to)",
+      "text": "Gamers are doing one of two things right now: Finishing their backlog before GTA 6… or pretending they’re gonna finish their backlog before GTA 6. 😭",
+      "author": {
+        "name": "KG Reloaded",
+        "handle": "reloadkg"
+      },
+      "url": "https://x.com/reloadkg/status/2113142416223920246",
+      "likeCount": 241,
+      "date": "2026-10-22T05:36:26.000Z",
+      "category": "gaming",
+      "media": false
     },
     {
       "id": "2107124303506317734",
@@ -178,7 +192,7 @@
         "handle": "muchl33t"
       },
       "url": "https://x.com/muchl33t/status/2111008672600162761",
-      "likeCount": 180,
+      "likeCount": 184,
       "date": "2026-10-16T08:17:42.000Z",
       "category": "tech",
       "media": false
@@ -262,7 +276,7 @@
         "handle": "poe_real69"
       },
       "url": "https://x.com/poe_real69/status/2111867403558633666",
-      "likeCount": 78,
+      "likeCount": 77,
       "date": "2026-10-18T17:10:00.000Z",
       "category": "tech",
       "media": false
@@ -366,6 +380,20 @@
       "media": false
     },
     {
+      "id": "2113080889961824695",
+      "thing": "The entire internet compromised",
+      "text": "The entire internet compromised before GTA 6",
+      "author": {
+        "name": "Jonah",
+        "handle": "JonahBlake"
+      },
+      "url": "https://x.com/JonahBlake/status/2113080889961824695",
+      "likeCount": 31,
+      "date": "2026-10-22T01:31:57.000Z",
+      "category": "tech",
+      "media": false
+    },
+    {
       "id": "2101214773111128432",
       "thing": "Human civilization, start to finish",
       "text": "It would be really, really funny if everyone died before GTA 6. Like, \"Damn, we got the entirety of human civilization from start to finish before GTA 6\"",
@@ -377,6 +405,20 @@
       "likeCount": 28,
       "date": "2026-09-19T07:40:15.000Z",
       "category": "absurd",
+      "media": false
+    },
+    {
+      "id": "2112933071771107621",
+      "thing": "Flying cars",
+      "text": "we really got flying cars before GTA6",
+      "author": {
+        "name": "Noir",
+        "handle": "actuallyXdan"
+      },
+      "url": "https://x.com/actuallyXdan/status/2112933071771107621",
+      "likeCount": 28,
+      "date": "2026-10-21T15:44:35.000Z",
+      "category": "tech",
       "media": false
     },
     {
@@ -420,6 +462,20 @@
       "date": "2026-10-17T03:41:33.000Z",
       "category": "tech",
       "media": true
+    },
+    {
+      "id": "2113083402211434943",
+      "thing": "Pokémon Baseball",
+      "text": "We really got POKÉMON BASEBALL before GTA 6",
+      "author": {
+        "name": "MLB Lockout Simulator 2027",
+        "handle": "lockout2027"
+      },
+      "url": "https://x.com/lockout2027/status/2113083402211434943",
+      "likeCount": 23,
+      "date": "2026-10-22T01:41:56.000Z",
+      "category": "gaming",
+      "media": false
     },
     {
       "id": "2102042602182709264",
@@ -478,20 +534,6 @@
       "media": false
     },
     {
-      "id": "2113080889961824695",
-      "thing": "The entire internet compromised",
-      "text": "The entire internet compromised before GTA 6",
-      "author": {
-        "name": "Jonah",
-        "handle": "JonahBlake"
-      },
-      "url": "https://x.com/JonahBlake/status/2113080889961824695",
-      "likeCount": 17,
-      "date": "2026-10-22T01:31:57.000Z",
-      "category": "tech",
-      "media": false
-    },
-    {
       "id": "2012746382021407211",
       "thing": "Someone playing GTA 6 before GTA 6",
       "text": "🥀So we got some dude getting GTA 6 before GTA 6 is out before GTA 6",
@@ -520,6 +562,20 @@
       "media": false
     },
     {
+      "id": "2113281471121371378",
+      "thing": "Alchemy",
+      "text": "we got alchemy before gta6",
+      "author": {
+        "name": "scoopy trooples",
+        "handle": "scupytrooples"
+      },
+      "url": "https://x.com/scupytrooples/status/2113281471121371378",
+      "likeCount": 13,
+      "date": "2026-10-22T14:49:00.000Z",
+      "category": "absurd",
+      "media": false
+    },
+    {
       "id": "2111759673930227769",
       "thing": "Car kickflips on Lovable",
       "text": "We got car kickflips on @Lovable before GTA6",
@@ -531,20 +587,6 @@
       "likeCount": 12,
       "date": "2026-10-18T10:01:55.000Z",
       "category": "tech",
-      "media": false
-    },
-    {
-      "id": "2113083402211434943",
-      "thing": "Pokémon Baseball",
-      "text": "We really got POKÉMON BASEBALL before GTA 6",
-      "author": {
-        "name": "MLB Lockout Simulator 2027",
-        "handle": "lockout2027"
-      },
-      "url": "https://x.com/lockout2027/status/2113083402211434943",
-      "likeCount": 12,
-      "date": "2026-10-22T01:41:56.000Z",
-      "category": "gaming",
       "media": false
     },
     {
@@ -576,6 +618,20 @@
       "media": false
     },
     {
+      "id": "2113468552778801301",
+      "thing": "Shai looking washed",
+      "text": "Shai washed before GTA 6",
+      "author": {
+        "name": "khi",
+        "handle": "khimvp"
+      },
+      "url": "https://x.com/khimvp/status/2113468552778801301",
+      "likeCount": 10,
+      "date": "2026-10-23T03:12:23.000Z",
+      "category": "other",
+      "media": true
+    },
+    {
       "id": "2017255376329048429",
       "thing": "Marshawn Lynch in the Game of Thrones universe",
       "text": "we got Marshawn Lynch in the GoT universe before GTA 6",
@@ -600,6 +656,34 @@
       "url": "https://x.com/HvK_Benji/status/2104148543166681522",
       "likeCount": 9,
       "date": "2026-09-27T09:58:00.000Z",
+      "category": "gaming",
+      "media": false
+    },
+    {
+      "id": "2113061501640786294",
+      "thing": "No internet",
+      "text": "We got no internet before gta6",
+      "author": {
+        "name": "Nagato",
+        "handle": "Nostradumbass23"
+      },
+      "url": "https://x.com/Nostradumbass23/status/2113061501640786294",
+      "likeCount": 9,
+      "date": "2026-10-22T00:14:55.000Z",
+      "category": "absurd",
+      "media": false
+    },
+    {
+      "id": "2112884105335448026",
+      "thing": "A huge new Xbox Series and Xbox Ally feature",
+      "text": "Avant GTA 6, Xbox annonce l'arrivée d'une énorme nouveauté sur les Xbox Series et Xbox Ally qui va tout changer 🤯",
+      "author": {
+        "name": "Gameblog Jeux Vidéo",
+        "handle": "Gameblog"
+      },
+      "url": "https://x.com/Gameblog/status/2112884105335448026",
+      "likeCount": 8,
+      "date": "2026-10-21T12:30:00.000Z",
       "category": "gaming",
       "media": false
     },
@@ -643,20 +727,6 @@
       "likeCount": 6,
       "date": "2025-05-03T00:42:48.000Z",
       "category": "personal life",
-      "media": false
-    },
-    {
-      "id": "2112884105335448026",
-      "thing": "A huge new Xbox Series and Xbox Ally feature",
-      "text": "Avant GTA 6, Xbox annonce l'arrivée d'une énorme nouveauté sur les Xbox Series et Xbox Ally qui va tout changer 🤯",
-      "author": {
-        "name": "Gameblog Jeux Vidéo",
-        "handle": "Gameblog"
-      },
-      "url": "https://x.com/Gameblog/status/2112884105335448026",
-      "likeCount": 6,
-      "date": "2026-10-21T12:30:00.000Z",
-      "category": "gaming",
       "media": false
     },
     {
